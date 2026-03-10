@@ -2,12 +2,14 @@ import { FaGlobeAmericas } from "react-icons/fa";
 
 export default function Navbar({ home, search, detail, filter, about }: any) {
   return (
-    <div className={`w-full h-20 flex justify-between items-center pr-7 pl-7`}>
+    <div
+      className={`w-full h-20 flex justify-between items-center pr-7 pl-7 fixed z-10`}
+    >
       <a className={`flex items-center gap-2 w-fit h-fit`} href={`/`}>
         <div
-          className={`h-10 w-10 bg-black flex justify-center items-center rounded-full`}
+          className={`h-9 w-9 bg-black flex justify-center items-center rounded-full`}
         >
-          <FaGlobeAmericas color={`#ffffff`} size={30} />
+          <FaGlobeAmericas color={`#ffffff`} size={25} />
         </div>
         <h1 className={`font-bold text-[18px]`}>World University</h1>
       </a>
@@ -22,25 +24,25 @@ export default function Navbar({ home, search, detail, filter, about }: any) {
           Home
         </a>
         <a
-          href="/"
+          href="/search"
           className={`${search} w-20 h-10 flex justify-center items-center rounded-full`}
         >
           Search
         </a>
         <a
-          href="/"
+          href="/detail"
           className={`${detail} w-20 h-10 flex justify-center items-center rounded-full`}
         >
           Detail
         </a>
         <a
-          href="/"
+          href="/filter"
           className={`${filter} w-20 h-10 flex justify-center items-center rounded-full`}
         >
           Filter
         </a>
         <a
-          href="/"
+          href="/about"
           className={`${about} w-20 h-10 flex justify-center items-center rounded-full`}
         >
           About
