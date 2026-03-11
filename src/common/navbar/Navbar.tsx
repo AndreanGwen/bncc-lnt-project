@@ -1,9 +1,13 @@
 import { FaGlobeAmericas } from "react-icons/fa";
+import { motion } from "motion/react";
 
 export default function Navbar({ home, search, detail, filter, about }: any) {
   return (
-    <div
-      className={`w-full h-20 flex justify-between items-center pr-7 pl-7 fixed z-10`}
+    <motion.div
+      className={`w-full h-20 flex justify-between items-center pr-7 pl-7 fixed z-10 backdrop-blur-xs border-b`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 1 }}
     >
       <a className={`flex items-center gap-2 w-fit h-fit`} href={`/`}>
         <div
@@ -48,6 +52,6 @@ export default function Navbar({ home, search, detail, filter, about }: any) {
           About
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
