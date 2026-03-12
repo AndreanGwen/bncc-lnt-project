@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import CardCountryHome from "@/common/cardCountryHome/CardCountryHome";
 import FiturSection from "@/common/fiturSection/FiturSection";
+import FooterHome from "@/common/footerHome/FooterHome";
 
 export default function HomePage() {
   const [showMap, setShowMap] = useState(false);
@@ -28,10 +29,9 @@ export default function HomePage() {
         filter="text-black bg-white hover:bg-black/10 hover:scale-110 transition"
         about="text-black bg-white hover:bg-black/10 hover:scale-110 transition"
       />
-
-      <div className="w-full min-h-screen pr-7 pl-7 flex gap-4 items-center">
+      <div className="w-full md:min-h-screen pr-7 pl-7 flex gap-4 md:items-center pt-20 md:pt-0 ">
         <motion.div
-          className="w-2/6 flex flex-col justify-center gap-4"
+          className="md:w-2/6 flex flex-col justify-center gap-4"
           initial={{ x: -800 }}
           animate={{ x: 0 }}
           transition={{ duration: 1.2 }}
@@ -81,9 +81,9 @@ export default function HomePage() {
 
         {showMap && <GeoMap setActiveCountry={setActiveCountry} />}
       </div>
-
       <CardCountryHome activeCountry={activeCountry} />
       <FiturSection />
+      <FooterHome />
     </div>
   );
 }

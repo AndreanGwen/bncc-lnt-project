@@ -41,11 +41,11 @@ export default function CardCountryHome({ activeCountry }: any) {
 
   return (
     <div className="min-h-fit w-full px-7">
-      <div className="flex pt-20 w-full gap-16 items-start">
+      <div className="flex flex-col lg:flex-row pt-20 w-full gap-12 items-start">
         {loading ? (
           <div className={`flex flex-wrap gap-4`}>
             {Array.from({ length: 9 }).map((_, i) => (
-              <Card key={i} className="w-52 h-72">
+              <Card key={i} className="md:w-52 md:h-72 w-40 h-60">
                 <CardContent>
                   <Skeleton className="aspect-video w-full bg-gray-300 h-28" />
                 </CardContent>
@@ -58,7 +58,7 @@ export default function CardCountryHome({ activeCountry }: any) {
           </div>
         ) : (
           <motion.div
-            className="flex flex-wrap gap-5"
+            className="md:flex flex-wrap md:gap-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 flex-1"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -71,7 +71,7 @@ export default function CardCountryHome({ activeCountry }: any) {
                     <div
                       key={c.code}
                       id={c.name.toLowerCase()}
-                      className={`w-52 h-72  bg-white rounded-2xl shadow-md p-3 cursor-pointer
+                      className={`w-full md:w-52 md:h-72  bg-white rounded-2xl shadow-md p-3 cursor-pointer
             transition-all duration-300 hover:scale-105
             ${
               activeCountry === c.code
@@ -84,13 +84,13 @@ export default function CardCountryHome({ activeCountry }: any) {
                         alt={`Image of ${c.name}`}
                         width={300}
                         height={200}
-                        className="w-full h-28 object-cover rounded-xl"
+                        className="w-full md:h-28 h-20 object-cover rounded-xl"
                       />
 
                       <h2 className="text-lg font-semibold pt-3">{c.name}</h2>
 
                       <div className="flex justify-between text-sm pt-4">
-                        <div className="flex flex-col gap-1 text-gray-500">
+                        <div className="flex flex-col gap-1 text-gray-500 text-xs md:text-sm">
                           <p className="flex items-center gap-1 ">
                             <LiaMonumentSolid />
                             Capital
@@ -105,10 +105,10 @@ export default function CardCountryHome({ activeCountry }: any) {
                           </p>
                         </div>
 
-                        <div className="flex flex-col gap-1 text-right font-medium truncate">
+                        <div className="flex flex-col gap-1 text-right font-medium truncate text-xs md:text-sm">
                           <p>{c.capital}</p>
                           <p>{c.language}</p>
-                          <p>{c.population}</p>
+                          <p className="truncate">{c.population}</p>
                         </div>
                       </div>
                     </div>

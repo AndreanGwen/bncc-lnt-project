@@ -28,7 +28,7 @@ export default function FiturSection() {
   ];
 
   return (
-    <div className="w-full min-h-screen pt-24 px-7">
+    <div className="w-full h-fit pt-24 px-7 pb-24">
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 50 }}
