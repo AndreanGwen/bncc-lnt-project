@@ -9,6 +9,8 @@ type Country = {
   language: string;
   population: string;
   code: string;
+  flagDetail: string;
+  coatOfArms: string;
 };
 
 type CountryContextHomeType = {
@@ -42,6 +44,8 @@ export function CountryHomeProvider({
           flag: c.flags.svg,
           population: c.population,
           code: c.cca3,
+          flagDetail: c.flags.alt,
+          coatOfArms: c.coatOfArms.svg,
         }));
 
         setCountriesHome(formatted);

@@ -9,6 +9,15 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { HiLanguage } from "react-icons/hi2";
 
 export default function CardCountryHome({ activeCountry }: any) {
   const router = useRouter();
@@ -55,51 +64,107 @@ export default function CardCountryHome({ activeCountry }: any) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {countries.map((c) => (
-              <div
-                key={c.code}
-                id={c.name.toLowerCase()}
-                className={`w-52 h-72 bg-white rounded-2xl shadow-md p-3 cursor-pointer
+            {countries.map((c, idx) => (
+              <Dialog key={idx}>
+                <form>
+                  <DialogTrigger asChild>
+                    <div
+                      key={c.code}
+                      id={c.name.toLowerCase()}
+                      className={`w-52 h-72  bg-white rounded-2xl shadow-md p-3 cursor-pointer
             transition-all duration-300 hover:scale-105
             ${
               activeCountry === c.code
                 ? "grayscale-0 ring-2 ring-blue-500 scale-105"
                 : "grayscale hover:grayscale-0"
             }`}
-              >
-                <Image
-                  src={c.flag}
-                  alt={`Image of ${c.name}`}
-                  width={300}
-                  height={200}
-                  className="w-full h-28 object-cover rounded-xl"
-                />
+                    >
+                      <Image
+                        src={c.flag}
+                        alt={`Image of ${c.name}`}
+                        width={300}
+                        height={200}
+                        className="w-full h-28 object-cover rounded-xl"
+                      />
 
-                <h2 className="text-lg font-semibold pt-3">{c.name}</h2>
+                      <h2 className="text-lg font-semibold pt-3">{c.name}</h2>
 
-                <div className="flex justify-between text-sm pt-4">
-                  <div className="flex flex-col gap-1 text-gray-500">
-                    <p className="flex items-center gap-1 ">
-                      <LiaMonumentSolid />
-                      Capital
-                    </p>
-                    <p className="flex items-center gap-1">
-                      <LuFlag />
-                      Language
-                    </p>
-                    <p className="flex items-center gap-1">
-                      <AiOutlineUser />
-                      Population
-                    </p>
-                  </div>
+                      <div className="flex justify-between text-sm pt-4">
+                        <div className="flex flex-col gap-1 text-gray-500">
+                          <p className="flex items-center gap-1 ">
+                            <LiaMonumentSolid />
+                            Capital
+                          </p>
+                          <p className="flex items-center gap-1">
+                            <HiLanguage />
+                            Language
+                          </p>
+                          <p className="flex items-center gap-1">
+                            <AiOutlineUser />
+                            Population
+                          </p>
+                        </div>
 
-                  <div className="flex flex-col gap-1 text-right font-medium truncate">
-                    <p>{c.capital}</p>
-                    <p>{c.language}</p>
-                    <p>{c.population}</p>
-                  </div>
-                </div>
-              </div>
+                        <div className="flex flex-col gap-1 text-right font-medium truncate">
+                          <p>{c.capital}</p>
+                          <p>{c.language}</p>
+                          <p>{c.population}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle className={`text-xl`}>{c.name}</DialogTitle>
+                      <DialogDescription>
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm pt-4">
+                          <p className="flex items-center gap-1 text-gray-500">
+                            <LiaMonumentSolid />
+                            Capital
+                          </p>
+                          <p className="font-medium text-right">{c.capital}</p>
+
+                          <p className="flex items-center gap-1 text-gray-500">
+                            <HiLanguage />
+                            Language
+                          </p>
+                          <p className="font-medium text-right">{c.language}</p>
+
+                          <p className="flex items-center gap-1 text-gray-500">
+                            <AiOutlineUser />
+                            Population
+                          </p>
+                          <p className="font-medium text-right">
+                            {c.population}
+                          </p>
+
+                          <p className="flex items-center gap-1 text-gray-500">
+                            <LuFlag />
+                            Flag
+                          </p>
+                          <p className="font-medium text-right">
+                            {c.flagDetail}
+                          </p>
+
+                          <p className="flex items-center gap-1 text-gray-500">
+                            Coat of Arms
+                          </p>
+
+                          <div className="flex justify-end">
+                            <Image
+                              alt="coat of arms"
+                              width={80}
+                              height={80}
+                              src={c.coatOfArms}
+                              className="object-contain"
+                            />
+                          </div>
+                        </div>
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </form>
+              </Dialog>
             ))}
           </motion.div>
         )}
