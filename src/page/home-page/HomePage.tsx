@@ -5,6 +5,7 @@ import CountUp from "react-countup";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import CardCountryHome from "@/common/cardCountryHome/CardCountryHome";
+import FiturSection from "@/common/fiturSection/FiturSection";
 
 export default function HomePage() {
   const [showMap, setShowMap] = useState(false);
@@ -82,6 +83,7 @@ export default function HomePage() {
       </div>
 
       <CardCountryHome activeCountry={activeCountry} />
+      <FiturSection />
     </div>
   );
 }
