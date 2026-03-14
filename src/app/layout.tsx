@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { CountryHomeProvider } from "@/context/CountryContextHome";
+import { AllCountryProvider } from "@/context/AllCountryContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <CountryHomeProvider>{children}</CountryHomeProvider>
+        <AllCountryProvider>
+          <CountryHomeProvider>{children}</CountryHomeProvider>
+        </AllCountryProvider>
       </body>
     </html>
   );

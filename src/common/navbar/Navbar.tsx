@@ -67,7 +67,7 @@ export default function Navbar({ home, search, detail, filter, about }: any) {
         >
           <a
             href="/"
-            className={`${home} text-white w-20 h-10 flex justify-center items-center rounded-full`}
+            className={`${home}  w-20 h-10 flex justify-center items-center rounded-full`}
           >
             Home
           </a>

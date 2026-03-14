@@ -116,7 +116,7 @@ export default function CardCountryHome({ activeCountry }: any) {
                   <DialogContent className="sm:max-w-md">
                     <DialogHeader>
                       <DialogTitle className={`text-xl`}>{c.name}</DialogTitle>
-                      <DialogDescription>
+                      <DialogDescription asChild>
                         <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm pt-4">
                           <p className="flex items-center gap-1 text-gray-500">
                             <LiaMonumentSolid />

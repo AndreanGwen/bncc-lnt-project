@@ -53,15 +53,12 @@ export default function FiturSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* Icon */}
             <div className="flex justify-center items-center w-16 h-16 mx-auto bg-gray-100 rounded-xl text-blue-600">
               {item.icon}
             </div>
 
-            {/* Title */}
             <h2 className="text-lg font-semibold pt-5">{item.title}</h2>
 
-            {/* Description */}
             <p className="text-gray-500 text-sm pt-3">{item.desc}</p>
           </motion.div>
         ))}
