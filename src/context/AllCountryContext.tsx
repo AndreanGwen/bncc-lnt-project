@@ -32,20 +32,15 @@ export function AllCountryProvider({
     async function fetchCountriesAll() {
       try {
         const res = await fetch(
-          "https://restcountries.com/v3.1/all?fields=name,capital,languages,flags,population,cca3,coatOfArms"
+          "https://restcountries.com/v3.1/all?fields=name,flags,cca3"
         );
 
         const data = await res.json();
 
         const formatted = data.map((c: any) => ({
           name: c.name.common,
-          capital: c.capital?.[0],
-          language: c.languages[Object.keys(c.languages)[0]],
           flag: c.flags.svg,
-          population: c.population,
           code: c.cca3,
-          flagDetail: c.flags.alt,
-          coatOfArms: c.coatOfArms.svg,
         }));
 
         setCountriesAll(formatted);
