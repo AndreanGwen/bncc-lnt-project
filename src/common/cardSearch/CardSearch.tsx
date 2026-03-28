@@ -13,11 +13,11 @@ export default function CardSearch({ countries, fullStatus }: any) {
         {Array.from({ length: 68 }).map((_, i) => (
           <div
             key={i}
-            className="w-56 h-14 border rounded-md flex items-center justify-between px-2 "
+            className="md:w-56 md:h-14 w-[40%] h-14 border rounded-md flex items-center justify-between px-2 "
           >
             <div className="flex items-center">
               <Skeleton className="h-8 w-8 rounded-full bg-gray-300" />
-              <Skeleton className="ml-2 h-3 w-24 bg-gray-300 rounded" />
+              <Skeleton className="ml-2 md:h-3 md:w-24 h-3 w-16 bg-gray-300 rounded" />
             </div>
             <Skeleton className="h-4 w-4 bg-gray-300 rounded" />
           </div>
@@ -29,7 +29,7 @@ export default function CardSearch({ countries, fullStatus }: any) {
     <>
       {(fullStatus ? countries : countries.slice(0, 100)).map((c: any) => (
         <div
-          className={`w-56 h-14 border rounded-md flex items-center cursor-pointer hover:bg-gray-100 hover:scale-105 transition pr-2 pl-2 justify-between`}
+          className={`md:w-56 md:h-14 w-[40%] h-14 border rounded-md flex items-center cursor-pointer hover:bg-gray-100 hover:scale-105 transition pr-2 pl-2 justify-between`}
           key={c.code}
           onClick={() => {
             localStorage.setItem("code", c.code.toLowerCase());

@@ -1,6 +1,5 @@
 "use client";
 import Navbar from "@/common/navbar/Navbar";
-import { useRouter } from "next/navigation";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useCountriesAll } from "@/context/AllCountryContext";
@@ -17,7 +16,7 @@ export default function SearchPage() {
     c.name.toLowerCase().includes(search.toLowerCase())
   );
   return (
-    <div className={`w-full min-h-screen`}>
+    <div className={`w-full min-h-screen bg-[#f8f8fa]`}>
       <Navbar
         home="text-black bg-white hover:bg-black/10 hover:scale-110 transition"
         search="text-white bg-black hover:bg-black/70 hover:scale-110 transition"
