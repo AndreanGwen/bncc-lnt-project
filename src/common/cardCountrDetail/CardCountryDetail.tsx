@@ -7,7 +7,7 @@ export default function CardCountryDetail({ data }: any) {
   return (
     <>
       <div
-        className={`border w-120 h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
+        className={`border md:w-120 w-full h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
       >
         <FaCity size={30} color="#155dfc" />
         <div className={`flex flex-col`}>
@@ -16,7 +16,7 @@ export default function CardCountryDetail({ data }: any) {
         </div>
       </div>
       <div
-        className={`border w-120 h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
+        className={`border md:w-120 w-full h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
       >
         <FaPeopleGroup size={30} color="#155dfc" />
         <div className={`flex flex-col`}>
@@ -27,7 +27,7 @@ export default function CardCountryDetail({ data }: any) {
         </div>
       </div>
       <div
-        className={`border w-120 h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
+        className={`border md:w-120 w-full h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
       >
         <PiMapPinAreaFill size={30} color="#155dfc" />
         <div className={`flex flex-col`}>
@@ -38,7 +38,7 @@ export default function CardCountryDetail({ data }: any) {
         </div>
       </div>
       <div
-        className={`border w-120 h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
+        className={`border md:w-120 w-full h-fit rounded-lg flex gap-4 items-center p-2 shadow`}
       >
         <FaMoneyBillWave size={30} color="#155dfc" />
         <div className={`flex flex-col`}>
