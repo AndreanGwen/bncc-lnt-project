@@ -44,7 +44,7 @@ export default function SearchPage() {
         </div>
 
         <Button
-          className={`bottom-10 rounded-full fixed cursor-pointer bg-blue-700 hover:scale-105 transition`}
+          className={`bottom-10 rounded-full fixed cursor-pointer bg-black hover:scale-105 transition`}
           onClick={() => setFull(!full)}
         >
           {full ? "Show less country" : "Show more country"}
