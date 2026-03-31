@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "World University",
   description: "World University Page",
+  icons: {
+    icon: "https://res.cloudinary.com/dgnnshujm/image/upload/v1774957376/world-bank-logo-png_seeklogo-209082_pnat6n.png",
+  },
 };
 
 const inter = Inter({

@@ -28,7 +28,9 @@ export default function CardCountryDetail_2({ data }: any) {
         <CardContent className="flex justify-between items-center md:w-98 py-1 ">
           <span className="md:text-xs text-xs text-gray-400 ">LANGUAGE</span>
           <span className="md:text-sm text-xs font-semibold">
-            {Object.values(data.languages).join(", ")}
+            {data.languages && Object.keys(data.languages).length > 0
+              ? Object.values(data.languages).join(", ")
+              : "None"}
           </span>
         </CardContent>
       </Card>

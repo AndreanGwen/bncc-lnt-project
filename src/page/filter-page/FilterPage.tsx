@@ -34,7 +34,10 @@ export default function FilterPage() {
           </CardContent>
         </Card>
 
-        <Card className="hover:bg-black/5" onClick={() => console.log("click")}>
+        <Card
+          className="hover:bg-black/5"
+          onClick={() => router.push("/detail")}
+        >
           <CardContent
             className="md:w-60 md:h-20 w-40 h-10 text-xs md:text-sm flex justify-center items-center cursor-pointer gap-2
           "

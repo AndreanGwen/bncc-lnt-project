@@ -32,7 +32,7 @@ export function AllCountryProvider({
     async function fetchCountriesAll() {
       try {
         const res = await fetch(
-          "https://restcountries.com/v3.1/all?fields=name,flags,cca3"
+          "https://restcountries.com/v3.1/all?fields=name,flags,cca3,region,population,area,independent"
         );
 
         const data = await res.json();
@@ -41,6 +41,10 @@ export function AllCountryProvider({
           name: c.name.common,
           flag: c.flags.svg,
           code: c.cca3,
+          region: c.region,
+          population: c.population,
+          area: c.area,
+          independent: c.independent,
         }));
 
         setCountriesAll(formatted);

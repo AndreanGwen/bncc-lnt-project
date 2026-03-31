@@ -59,8 +59,8 @@ export default function DetailPage() {
         <div className="flex flex-col justify-center">
           <div className={`flex flex-col gap-1.5 md:pt-28 pt-20`}>
             <h4 className={`text-blue-700 font-semibold`}>
-              {data?.region.toUpperCase()} &bull;{" "}
-              {data?.subregion.toUpperCase()}
+              {data?.region.toUpperCase()} &bull; {}
+              {data.subregion ? data?.subregion.toUpperCase() : "-"}
             </h4>
             <h1 className={`text-6xl font-bold`}>{data?.name?.common}</h1>
             <p className={`text-md font-semibold text-black/50`}>
